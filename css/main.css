@@ -1,0 +1,61 @@
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    height: 100%;
+    background-image: linear-gradient(to bottom, #2e2468, #2e2378, #2c2288, #292198, #251fa8, #1c37ba, #0f4ccb, #0060db, #0086e4, #52a8e4, #93c6e2, #d5e0e4);
+}
+
+h2 {
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.stepIcon {
+    margin-right: 10px;
+    font-size: 35px;
+    color: #74474f;
+}
+
+.stepHeader {
+    background-color: #f8f8f8;
+    cursor: pointer;
+}
+
+.stepHeaderLeft {
+    border: 2px solid #cecece;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.stepHeaderMiddle {
+    border-top: 2px solid #cecece;
+    border-bottom: 2px solid #cecece;
+}
+
+.stepHeaderRight {
+    border: 2px solid #cecece;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#mainHeader {
+    width: 100%;
+    background-color: #131111;
+}
+
+#mainNavbar {
+    width: 100%;
+    background-color: #131111;
+}
+
+#mainHeader img {
+    width: 500px;
+    cursor: pointer;
+}
+
+.nav-item {
+    color: white !important;
+}
