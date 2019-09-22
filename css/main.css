@@ -5,7 +5,8 @@ html {
 body {
     font-family: 'Montserrat', sans-serif;
     height: 100%;
-    background-image: linear-gradient(to bottom, #2e2468, #2e2378, #2c2288, #292198, #251fa8, #1c37ba, #0f4ccb, #0060db, #0086e4, #52a8e4, #93c6e2, #d5e0e4);
+    /* background-image: linear-gradient(to bottom, #2e2468, #2e2378, #2c2288, #292198, #251fa8, #1c37ba, #0f4ccb, #0060db, #0086e4, #52a8e4, #93c6e2, #d5e0e4); */
+    background-image: linear-gradient(to right bottom, #ff0000, #ff3d00, #fe5900, #fc6e00, #fb8100, #ff773a, #ff7159, #ff7174, #f973ae, #d287e1, #8e9ffe, #00b1ff);
 }
 
 h2 {
@@ -58,4 +59,8 @@ h2 {
 
 .nav-item {
     color: white !important;
+}
+
+.customFooter {
+    background: rgba(255, 255, 255, .3)
 }

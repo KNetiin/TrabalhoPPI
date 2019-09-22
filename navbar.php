@@ -5,10 +5,20 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link" href="#">Home</a>
-                <a class="nav-item nav-link" href="#">Funcionários</a>
-                <a class="nav-item nav-link" href="#">Clientes</a>
-                <a class="nav-item nav-link" href="#">Imóveis</a>
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="employee.php#">Funcionários</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Clientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Imóveis</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
