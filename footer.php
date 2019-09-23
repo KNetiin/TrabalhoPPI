@@ -1,4 +1,4 @@
-<footer class="fixed-bottom page-footer font-small blue">
+<footer class="page-footer font-small blue">
   <!-- <div class="container-fluid  fixed-bottom" id="mainFooter">
     <div class="container">
       <p>Exemplo de rodapé comum</p>

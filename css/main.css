@@ -6,7 +6,8 @@ body {
     font-family: 'Montserrat', sans-serif;
     height: 100%;
     /* background-image: linear-gradient(to bottom, #2e2468, #2e2378, #2c2288, #292198, #251fa8, #1c37ba, #0f4ccb, #0060db, #0086e4, #52a8e4, #93c6e2, #d5e0e4); */
-    background-image: linear-gradient(to right bottom, #ff0000, #ff3d00, #fe5900, #fc6e00, #fb8100, #ff773a, #ff7159, #ff7174, #f973ae, #d287e1, #8e9ffe, #00b1ff);
+    background-color: #3f4247;
+    background-image: url('../images/black-linen.png')
 }
 
 h2 {
@@ -71,4 +72,47 @@ h2 {
 .formEmployeeHeader {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+}
+
+#internalContent {
+    height: 100%;
+    width: 90%;
+    background: rgba(255, 255, 255, .8);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mainContent {
+    margin-bottom: 82px;
+}
+
+.parallax {
+    /* The image used */
+    background-image: url("../images/mansao.jpg");
+    /* Set a specific height */
+    min-height: 500px;
+    height: 100%;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: none;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media only screen and (max-device-width: 1366px) {
+    .parallax {
+        min-height: 200px;
+        background-attachment: scroll;
+    }
+    #internalContent {
+        width: 100%;
+    }
+    .container-fluid {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
 }
