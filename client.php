@@ -1,6 +1,6 @@
 <?php
 
-$paginaAtiva = "employee";
+$paginaAtiva = "client";
 
 ?>
 
@@ -40,7 +40,7 @@ $paginaAtiva = "employee";
             <div class="card formEmployee">
                 <!-- HEADER -->
                 <div class="card-body text-white bg-dark formEmployeeHeader">
-                    <h2 class="card-title text-center">Cadastro de Funcionário</h2>
+                    <h2 class="card-title text-center">Cadastro de Clientes Proprietários</h2>
                 </div>
 
                 <!-- NAVIGATION -->
@@ -64,12 +64,12 @@ $paginaAtiva = "employee";
                                 </div>
                             </div>
                         </div>
-                        <div class="col-4 stepHeader stepHeaderRight" id="professional-header">
+                        <div class="col-4 stepHeader stepHeaderRight" id="additional-header">
                             <div class="row p-1 align-items-center justify-content-center">
                                 <i class="fas fa-user-tie stepIcon"></i>
                                 <div class="d-inline pt-2">
                                     <h6>Informações</h6>
-                                    <h6>Profissionais</h6>
+                                    <h6>Adicionais</h6>
                                 </div>
                             </div>
                         </div>
@@ -80,10 +80,10 @@ $paginaAtiva = "employee";
                 <div class="card-body">
                     <form action="employeePost.php" method="POST">
 
+
                         <?php include "components/stepPersonal.php"; ?>
                         <?php include "components/stepLocation.php"; ?>
-                        <?php include "components/stepProfessional.php"; ?>
-
+                        <?php include "components/stepAdditional.php"; ?>
 
                         <div class="row">
                             <div class="col-6" id="back">

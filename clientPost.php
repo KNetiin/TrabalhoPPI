@@ -8,7 +8,6 @@
 	$cpf = $_POST["cpf"];
 	$phone = $_POST["phone"];
   $cellphone = $_POST["cellphone"];
-  $email = $_POST["email"];
 
   // LOCATION INFORMATIONS
 	$cep = $_POST["cep"];
@@ -31,7 +30,6 @@
 	echo "cpf: $cpf <br/>";
 	echo "phone: $phone <br/>";
 	echo "cellphone: $cellphone <br/>";
-	echo "email: $email <br/>";
 	echo "cep: $cep <br/>";
 	echo "state: $state <br/>";
 	echo "city: $city <br/>";
