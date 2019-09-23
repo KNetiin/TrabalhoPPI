@@ -35,12 +35,11 @@ $paginaAtiva = "employee";
     </head>
     <body>
         <?php include "header.php"; ?>
-        <?php include "navbar.php"; ?>
 
         <div class="container pt-lg-3">
-            <div class="card">
+            <div class="card formEmployee">
                 <!-- HEADER -->
-                <div class="card-body text-white bg-dark">
+                <div class="card-body text-white bg-dark formEmployeeHeader">
                     <h2 class="card-title text-center">Cadastro de Funcionário</h2>
                 </div>
 

@@ -34,7 +34,6 @@ $paginaAtiva = "home";
     </head>
     <body>
         <?php include "header.php"; ?>
-        <?php include "navbar.php"; ?>
 
         <div class="container mainContent">
 
