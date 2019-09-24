@@ -1,46 +1,46 @@
 $(document).ready(() => {
   // MOSTRAR INICIALMENTE O STEP PERSONAL
-  showPersonal()
+  showInitial()
 
   // ADICIONANDO EVENTO PARA CADA HEADER DO STEPPER
-  $("#personal-header").click(showPersonal)
+  $("#initial-header").click(showInitial)
+  $("#property-header").click(showProperty)
   $("#location-header").click(showLocation)
-  $("#professional-header").click(showProfessional)
 })
 
 /*************************************************** FUNÇÕES DO STEPPER ***************************************************/
 // INDICA QUAL É O STEP A SER MOSTRADO
 let step = 0
 
-// MOSTRA SOMENTE STEP PERSONAL
-let showPersonal = () => {
+// MOSTRA SOMENTE STEP INITIAL
+let showInitial = () => {
   step = 0
-  $("#personal").show("fast")
+  $("#initial").show("fast")
+  $("#property").hide("fast")
   $("#location").hide("fast")
-  $("#professional").hide("fast")
   $("#next").show("fast")
   $("#save").hide("fast")
   $("#back").hide("fast")
 }
 
-// MOSTRA SOMENTE STEP LOCATION
-let showLocation = () => {
+// MOSTRA SOMENTE STEP PROPERTY
+let showProperty = () => {
   step = 1
-  $("#personal").hide("fast")
-  $("#location").show("fast")
-  $("#professional").hide("fast")
+  $("#initial").hide("fast")
+  $("#property").show("fast")
+  $("#location").hide("fast")
   $("#back").show("fast")
   $("#next").show("fast")
   $("#save").hide("fast")
 }
 
-// MOSTRA SOMENTE STEP PROFESSIONAL
-let showProfessional = () => {
+// MOSTRA SOMENTE STEP LOCATION
+let showLocation = () => {
   step = 2
-  $("#personal").hide("fast")
-  $("#location").hide("fast")
-  $("#professional").show("fast")
-  $("#back").show("fast")
+  $("#initial").hide("fast")
+  $("#property").hide("fast")
+  $("#location").show("fast")
+  $("#back").hide("fast")
   $("#next").hide("fast")
   $("#save").show("fast")
 }
@@ -48,18 +48,18 @@ let showProfessional = () => {
 // RESPONSÁVEL POR PASSAR O STEPPER PARA FRENTE
 let nextStep = () => {
   if (step === 0) {
-    showLocation()
+    showProperty()
   } else if (step === 1) {
-    showProfessional()
+    showLocation()
   }
 }
 
 // RESPONSÁVEL POR PASSAR O STEPPER PARA TRÁS
 let backStep = () => {
   if (step === 1) {
-    showPersonal()
+    showInitial()
   } else if (step === 2) {
-    showLocation()
+    showProperty()
   }
 }
 /**************************************************************************************************************************/

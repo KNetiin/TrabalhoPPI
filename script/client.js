@@ -5,7 +5,7 @@ $(document).ready(() => {
   // ADICIONANDO EVENTO PARA CADA HEADER DO STEPPER
   $("#personal-header").click(showPersonal)
   $("#location-header").click(showLocation)
-  $("#professional-header").click(showProfessional)
+  $("#additional-header").click(showAdditional)
 })
 
 /*************************************************** FUNÇÕES DO STEPPER ***************************************************/
@@ -17,7 +17,7 @@ let showPersonal = () => {
   step = 0
   $("#personal").show("fast")
   $("#location").hide("fast")
-  $("#professional").hide("fast")
+  $("#additional").hide("fast")
   $("#next").show("fast")
   $("#save").hide("fast")
   $("#back").hide("fast")
@@ -28,19 +28,19 @@ let showLocation = () => {
   step = 1
   $("#personal").hide("fast")
   $("#location").show("fast")
-  $("#professional").hide("fast")
+  $("#additional").hide("fast")
   $("#back").show("fast")
   $("#next").show("fast")
   $("#save").hide("fast")
 }
 
-// MOSTRA SOMENTE STEP PROFESSIONAL
-let showProfessional = () => {
+// MOSTRA SOMENTE STEP ADDITIONAL
+let showAdditional = () => {
   step = 2
   $("#personal").hide("fast")
   $("#location").hide("fast")
-  $("#professional").show("fast")
-  $("#back").show("fast")
+  $("#additional").show("fast")
+  $("#back").hide("fast")
   $("#next").hide("fast")
   $("#save").show("fast")
 }
@@ -50,7 +50,7 @@ let nextStep = () => {
   if (step === 0) {
     showLocation()
   } else if (step === 1) {
-    showProfessional()
+    showAdditional()
   }
 }
 

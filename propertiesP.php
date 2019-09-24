@@ -1,6 +1,6 @@
 <?php
 
-$paginaAtiva = "client";
+$paginaAtiva = "properties";
 
 ?>
 
@@ -30,7 +30,7 @@ $paginaAtiva = "client";
         <link rel="stylesheet" href="css/main.css">
 
         <!-- JS FILES -->
-        <script src="script/client.js"></script>
+        <script src="script/property.js"></script>
         <script src="script/main.js"></script>
     </head>
     <body>
@@ -46,30 +46,30 @@ $paginaAtiva = "client";
                 <!-- NAVIGATION -->
                 <div class="card-body text-center">
                     <div class="row">
-                        <div class="col-4 stepHeader stepHeaderLeft" id="personal-header">
+                        <div class="col-4 stepHeader stepHeaderLeft" id="initial-header">
                             <div class="row p-1 align-items-center justify-content-center">
                                 <i class="fas fa-user stepIcon"></i>
                                 <div class="d-inline pt-2">
                                     <h6>Informações</h6>
-                                    <h6>Pessoais</h6>
+                                    <h6>Iniciais</h6>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-4 stepHeader stepHeaderMiddle" id="location-header">
+                        <div class="col-4 stepHeader stepHeaderMiddle" id="property-header">
                             <div class="row p-1 align-items-center justify-content-center">
                                 <i class="fas fa-street-view stepIcon"></i>
                                 <div class="d-inline pt-2">
-                                    <h6>Informações de</h6>
-                                    <h6>Localização</h6>
+                                    <h6>Informações do</h6>
+                                    <h6>Imóvel</h6>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-4 stepHeader stepHeaderRight" id="additional-header">
+                        <div class="col-4 stepHeader stepHeaderRight" id="location-header">
                             <div class="row p-1 align-items-center justify-content-center">
                                 <i class="fas fa-user-plus stepIcon"></i>
                                 <div class="d-inline pt-2">
-                                    <h6>Informações</h6>
-                                    <h6>Adicionais</h6>
+                                    <h6>Informações de</h6>
+                                    <h6>Localização</h6>
                                 </div>
                             </div>
                         </div>
@@ -80,9 +80,9 @@ $paginaAtiva = "client";
                 <div class="card-body">
                     <form action="clientPost.php" method="POST">
 
-                        <?php include "components/stepPersonal.php"; ?>
+                        <?php include "components/stepInitial.php"; ?>
+                        <?php include "components/stepImovel.php"; ?>
                         <?php include "components/stepLocation.php"; ?>
-                        <?php include "components/stepAdditional.php"; ?>
 
                         <div class="row">
                             <div class="col-6" id="back">

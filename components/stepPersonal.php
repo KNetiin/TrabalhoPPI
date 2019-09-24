@@ -30,7 +30,7 @@
 
     <div class="form-row">
         <!-- EMAIL -->
-        <div class="form-group col-sm-6">
+        <div class="form-group col-12">
             <label for="email">E-mail:</label>
             <input type="email" class="form-control" name="email" id="email">
         </div>

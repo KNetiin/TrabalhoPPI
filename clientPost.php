@@ -8,6 +8,7 @@
 	$cpf = $_POST["cpf"];
 	$phone = $_POST["phone"];
   $cellphone = $_POST["cellphone"];
+  $email = $_POST["email"];
 
   // LOCATION INFORMATIONS
 	$cep = $_POST["cep"];
@@ -18,18 +19,16 @@
 	$number = $_POST["number"];
   $complement = $_POST["complement"];
 
-  // PROFESSIONAL INFORMATIONS
-	$user       = $_POST["user"];
-	$password       = $_POST["password"];
-	$enterprisePhone       = $_POST["enterprisePhone"];
-	$profession       = $_POST["profession"];
-	$salary       = $_POST["salary"];
-	$dateOfEntry       = $_POST["dateOfEntry"];
+  // ADDITIONAL INFORMATIONS
+	$gender = $_POST["gender"];
+	$status = $_POST["status"];
+	$profession = $_POST["profession"];
 
 	echo "name: $name <br/>";
 	echo "cpf: $cpf <br/>";
 	echo "phone: $phone <br/>";
 	echo "cellphone: $cellphone <br/>";
+	echo "email: $email <br/>";
 	echo "cep: $cep <br/>";
 	echo "state: $state <br/>";
 	echo "city: $city <br/>";
@@ -37,12 +36,9 @@
 	echo "address: $address <br/>";
 	echo "number: $number <br/>";
 	echo "complement: $complement <br/>";
-	echo "user: $user <br/>";
-	echo "password: $password <br/>";
-	echo "enterprisePhone: $enterprisePhone <br/>";
+	echo "gender: $gender <br/>";
+	echo "status: $status <br/>";
 	echo "profession: $profession <br/>";
-	echo "salary: $salary <br/>";
-	echo "dateOfEntry: $dateOfEntry <br/>";
 ?>
 </body>
 </html>

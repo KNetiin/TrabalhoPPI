@@ -19,7 +19,7 @@
                         <a class="nav-link" href="client.php#">Clientes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Imóveis</a>
+                        <a class="nav-link" href="propertiesP.php#">Imóveis</a>
                     </li>
                 </ul>
             </div>
