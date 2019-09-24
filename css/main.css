@@ -7,7 +7,7 @@ body {
     height: 100%;
     /* background-image: linear-gradient(to bottom, #2e2468, #2e2378, #2c2288, #292198, #251fa8, #1c37ba, #0f4ccb, #0060db, #0086e4, #52a8e4, #93c6e2, #d5e0e4); */
     background-color: #3f4247;
-    background-image: url('../images/black-linen.png')
+    background-image: url('../images/black-linen.png');
 }
 
 h2 {
@@ -88,21 +88,10 @@ h2 {
     padding-left: 0px;
 }
 
-.parallax {
-    /* The image used */
-    background-image: url("../images/mansao.jpg");
-    /* Set a specific height */
-    min-height: 500px;
-    height: 100%;
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    padding: none;
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+#logotipo {
+    max-width: 100%;
+    height: auto;
+    width: auto;
 }
 
 .formLogin {
@@ -114,13 +103,34 @@ h2 {
     color: white;
     padding: 15px;
     margin: 5px;
+    margin-bottom: 20px;
+}
+
+.imgProp {
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
+
+.imgPresentation {
+    padding: 20px;
+}
+
+.myCard {
+    max-width: 70%;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.propertieImages {
+    border-left: 1px solid grey;
 }
 
 @media only screen and (max-device-width: 800px) {
-    .parallax {
-        min-height: 200px;
-        background-attachment: scroll;
-    }
     #internalContent {
         width: 100%;
     }
@@ -128,4 +138,15 @@ h2 {
         padding-right: 0px;
         padding-left: 0px;
     }
+    .propertieImages {
+        border-left: 0px;
+        border-top: 1px solid grey;
+    }
+    #cardRow {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }
+
+
+/* Test */

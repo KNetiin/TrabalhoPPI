@@ -40,7 +40,7 @@ $paginaAtiva = "properties";
     <div class="container-fluid" id="filterOptions">
         <form action="">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <div class="row justify-content-center">
                         Intenção
                     </div>
@@ -54,7 +54,7 @@ $paginaAtiva = "properties";
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <div class="row justify-content-center">
                         Bairro
                     </div>
@@ -72,10 +72,10 @@ $paginaAtiva = "properties";
                     </div>
                     <div class="row justify-content-center">
                         <div class="col-5">
-                            <input type="number" id="lowestPrice" class="form-control"  placeholder="Min"/>
+                            <input type="number" id="lowestPrice" class="form-control" placeholder="Min" />
                         </div>
                         <div class="col-5">
-                            <input type="number" id="highestPrice" class="form-control" placeholder="Max"/>
+                            <input type="number" id="highestPrice" class="form-control" placeholder="Max" />
                         </div>
                     </div>
                 </div>
@@ -85,13 +85,22 @@ $paginaAtiva = "properties";
                     </div>
                     <div class="row justify-content-center">
                         <div class="col">
-                            <input type="text" class="form-control" id="otherInformations"/>
+                            <input type="text" class="form-control" id="otherInformations" />
                         </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="row">&nbsp</div>
+                    <div class="row justify-content-center">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Consultar</button>
                     </div>
                 </div>
             </div>
         </form>
+
     </div>
+
+    <?php include "presentationCard.php"; ?>
 
     <?php include "footer.php"; ?>
 
