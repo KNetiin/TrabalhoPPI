@@ -8,7 +8,7 @@
   </div> -->
   <!-- Copyright -->
   <div class="footer-copyright card text-center py-3 customFooter">© 2019 Copyright:
-    <a href="https://mdbootstrap.com/education/bootstrap/">Fuguete e Farofa</a>
+    <p>Antonio Neto e Lucas Rossi</p> 
   </div>
   <!-- Copyright -->
 </footer>

@@ -8,5 +8,4 @@ $(document).ready(() => {
     }, function() {
         $(this).css("background-color", "#f8f8f8")
     })
-
 })
