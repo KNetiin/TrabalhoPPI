@@ -84,6 +84,8 @@ h2 {
 
 .mainContent {
     margin-bottom: 82px;
+    padding-right: 0px;
+    padding-left: 0px;
 }
 
 .parallax {
@@ -103,7 +105,18 @@ h2 {
     background-size: cover;
 }
 
-@media only screen and (max-device-width: 1366px) {
+.formLogin {
+    padding: 10px;
+}
+
+#filterOptions {
+    background: rgba(56, 56, 56, .5);
+    color: white;
+    padding: 15px;
+    margin: 5px;
+}
+
+@media only screen and (max-device-width: 800px) {
     .parallax {
         min-height: 200px;
         background-attachment: scroll;

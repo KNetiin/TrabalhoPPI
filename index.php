@@ -38,9 +38,9 @@ $paginaAtiva = "home";
     <?php include "header.php"; ?>
 
     <div class="container-fluid mainContent">
+        <div class="row parallax"></div>
 
         <div id="internalContent">
-            <div class="row parallax"></div>
             <div class="bd-example">
                 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
