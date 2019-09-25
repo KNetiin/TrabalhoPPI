@@ -1,4 +1,33 @@
 $(document).ready(() => {
+    /*************************************************** FUNÇÕES DO NAVBAR ***************************************************/
+    $("#navbar-public-home").click(() => {
+        showPublicHome();
+    })
+
+    $("#navbar-public-properties").click(() => {
+        showPublicProperties();
+    })
+
+    $("#navbar-private-clients").click(() => {
+        showPrivateClientsList();
+    })
+    
+    let showPublicHome = () => {
+        $(".myPage").hide("fast");
+        $("#page-public-home").show("fast");
+    };
+
+    let showPublicProperties = () => {
+        $(".myPage").hide("fast");
+        $("#page-public-properties").show("fast");
+    };
+
+    let showPrivateClientsList = () => {
+        $(".myPage").hide("fast");
+        $("#page-private-clientsList").show("fast");
+    };
+
+    showPublicHome();
 
     /*************************************************** FUNÇÕES DO STEPPER ***************************************************/
 

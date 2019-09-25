@@ -1,95 +1,44 @@
-<?php
-
-$paginaAtiva = "home";
-
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- TITLE -->
+        <title>Imobiliária F&F</title>
 
-    <!-- TITLE -->
-    <title>Confraria Imóveis</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+        <!-- ICONS - FONTAWESOME -->
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
-    <!-- ICONS - FONTAWESOME -->
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+        <!-- FONT - MONTSERRAT -->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 
-    <!-- FONT - MONTSERRAT -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+        <!-- CSS FILES -->
+        <link rel="stylesheet" href="css/main.css">
 
-    <!-- CSS FILES -->
-    <link rel="stylesheet" href="css/main.css">
+        <!-- JS FILES -->
+        <script src="script/main.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <?php include __DIR__ . "/layouts/header.php"; ?>
+        
+            <!-- PUBLIC -->
+            <div class="myPage" id="page-public-home"> <?php include __DIR__ . "/pages/public/home.php"; ?> </div>
+            <div class="myPage" id="page-public-properties"> <?php include __DIR__ . "/pages/public/properties.php"; ?> </div>
+            
+            <!-- PRIVATE -->
+            <div class="myPage" id="page-private-clientsList"> <?php include __DIR__ . "/pages/private/clients/clientsList.php"; ?> </div>
 
-    <!-- JS FILES -->
-    <script src="script/main.js"></script>
-</head>
 
-<body class="">
-    
-    <div class="wrapper">
-            <?php include "header.php"; ?>
-        <div class="row">
-            <div class="col logo">
-                <img src="images/mansao.jpg" id="logotipo" alt="logoConfraria">
-            </div>
+            <?php include __DIR__ . "/layouts/footer.php"; ?>
         </div>
-        <div class="row">
-            <div class="bd-example col">
-                <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="images/homeSlide1.png" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Os melhores imóveis</h5>
-                                <p>Dispomos dos melhores imóveis com o melhor custo benefício.</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="images/groupSlide1.png" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Os melhores corretores</h5>
-                                <p>Prezamos por um bom atendimento, por isso, temos os melhores corretores para te atender da forma que você merece!</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="images/heartSlide1.png" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Tudo feito com amor.</h5>
-                                <p>Gostamos do que fazemos, e fazemos por que gostamos.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <?php include "footer.php"; ?>
-    </div>
-
-
-</body>
-
+    </body>
 </html>

@@ -4,30 +4,36 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand" href="index.php#">
-            <img src="images/logoppi6.png" alt="logo-confraria">
+            <img src="../images/logoppi6.png" alt="logo-confraria">
         </a>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="collapse navbar-collapse mt-md-3" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <!-- PUBLIC -->
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php#">Home</a>
+                        <p class="nav-link" id="navbar-public-home">Home</p>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="employee.php#">Funcionários</a>
+                        <p class="nav-link" id="navbar-public-properties">Imóveis</p>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="client.php#">Clientes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="propertiesP.php#">Imóveis neto</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="properties.php#">Imóveis farofa</a>
+                    <!-- PRIVATE -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Área Privada
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <p class="dropdown-item" id="navbar-private-employees">Funcionários</p>
+                            <p class="dropdown-item" id="navbar-private-clients">Clientes</p>
+                            <p class="dropdown-item" id="navbar-private-properties">Imóveis</p>
+                        </div>
                     </li>
                 </ul>
             </div>
         </div>
-        <button class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#modalExemplo" type="button">Login</button>
+        <button class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#modalExemplo" type="button">
+            Login
+        </button>
+
         <!-- Modal -->
         <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
