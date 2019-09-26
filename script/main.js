@@ -20,6 +20,10 @@ $(document).ready(() => {
         showPrivatePropertiesList();
     })
     
+    $("#imgNavbar").click(() => {
+        showPublicHome();
+    })
+
     let showPublicHome = () => {
         $(".myPage").hide("fast");
         $("#page-public-home").show("fast");
@@ -59,4 +63,12 @@ $(document).ready(() => {
     /************************************************** FUNÇÕES DE LISTAGEM **************************************************/
     // $(".btn-cadastro").click(function())
 
+    /****************************************************FUNÇÕES DO RODAPÉ*****************************************************/
+
+    function adjustDiv() {
+        let div = document.getElementById('conteudo')
+        let footer = document.getElementById('footer').clientHeight
+        div.style.paddingBottom = `${footer}px`
+    }
+    adjustDiv();
 })

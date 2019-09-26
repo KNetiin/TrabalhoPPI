@@ -26,19 +26,23 @@
         <!-- JS FILES -->
         <script src="script/main.js"></script>
     </head>
+
     <body>
-        <?php include __DIR__ . "/layouts/header.php"; ?>
-    
-        <!-- PUBLIC -->
-        <div class="myPage" id="page-public-home"> <?php include __DIR__ . "/pages/public/home.php"; ?> </div>
-        <div class="myPage" id="page-public-properties"> <?php include __DIR__ . "/pages/public/properties.php"; ?> </div>
-        
-        <!-- PRIVATE -->
-        <div class="myPage" id="page-private-clientsList"> <?php include __DIR__ . "/pages/private/clients/clientsList.php"; ?> </div>
-        <div class="myPage" id="page-private-employeesList"> <?php include __DIR__ . "/pages/private/employees/employeesList.php"; ?> </div>
-        <div class="myPage" id="page-private-propertiesList"> <?php include __DIR__ . "/pages/private/properties/propertiesList.php"; ?> </div>
+        <div class="wrapper" id="principal">
+            <?php include __DIR__ . "/layouts/header.php"; ?>
 
+            <div id="conteudo">
+                <!-- PUBLIC -->
+                <div class="myPage" id="page-public-home"> <?php include __DIR__ . "/pages/public/home.php"; ?> </div>
+                <div class="myPage" id="page-public-properties"> <?php include __DIR__ . "/pages/public/properties.php"; ?> </div>
 
-        <?php include __DIR__ . "/layouts/footer.php"; ?>
+                <!-- PRIVATE -->
+                <div class="myPage" id="page-private-clientsList"> <?php include __DIR__ . "/pages/private/clients/clientsList.php"; ?> </div>
+            </div>
+            <div id="footer">
+                <?php include __DIR__ . "/layouts/footer.php"; ?>
+            </div>
+        </div>
     </body>
+
 </html>
