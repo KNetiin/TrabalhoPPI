@@ -3,8 +3,8 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="index.php#">
-            <img src="../images/logoppi6.png" alt="logo-confraria">
+        <a class="navbar-brand" id="imgNavbar" href="index.php#">
+            <img src="images/logoppi6.png" alt="logo-confraria">
         </a>
         <div class="collapse navbar-collapse mt-md-3" id="navbarNavAltMarkup">
             <div class="navbar-nav">

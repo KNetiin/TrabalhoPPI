@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col logo">
-        <img src="../../images/mansao.jpg" id="logotipo" alt="logoConfraria">
+        <img src="images/mansao.jpg" id="logotipo" alt="logoConfraria">
     </div>
 </div>
 <div class="row">
@@ -13,21 +13,21 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="../../images/homeSlide1.png" class="d-block w-100" alt="...">
+                    <img src="images/homeSlide1.png" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>Os melhores imóveis</h5>
                         <p>Dispomos dos melhores imóveis com o melhor custo benefício.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="../../images/groupSlide1.png" class="d-block w-100" alt="...">
+                    <img src="images/groupSlide1.png" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>Os melhores corretores</h5>
                         <p>Prezamos por um bom atendimento, por isso, temos os melhores corretores para te atender da forma que você merece!</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="../../images/heartSlide1.png" class="d-block w-100" alt="...">
+                    <img src="images/heartSlide1.png" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>Tudo feito com amor.</h5>
                         <p>Gostamos do que fazemos, e fazemos por que gostamos.</p>

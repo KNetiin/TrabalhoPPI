@@ -11,7 +11,11 @@ $(document).ready(() => {
     $("#navbar-private-clients").click(() => {
         showPrivateClientsList();
     })
-    
+
+    $("#imgNavbar").click(() => {
+        showPublicHome();
+    })
+
     let showPublicHome = () => {
         $(".myPage").hide("fast");
         $("#page-public-home").show("fast");
@@ -37,4 +41,10 @@ $(document).ready(() => {
     }, function() {
         $(this).css("background-color", "#f8f8f8")
     })
+
+    /****************************************************FUNÇÕES DO RODAPÉ*****************************************************/
+
+    // function footerFixed () {
+
+    // }
 })
