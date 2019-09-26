@@ -44,7 +44,10 @@ $(document).ready(() => {
 
     /****************************************************FUNÇÕES DO RODAPÉ*****************************************************/
 
-    // function footerFixed () {
-
-    // }
+    function adjustDiv() {
+        let div = document.getElementById('conteudo')
+        let footer = document.getElementById('footer').clientHeight
+        div.style.paddingBottom = `${footer}px`
+    }
+    adjustDiv();
 })
