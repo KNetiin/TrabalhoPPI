@@ -91,6 +91,35 @@ li p {
     display: none;
 }
 
+/* Mobile Styles */
+@media only screen and (max-width: 1000px) {
+    .myCard {
+        width: 100%;
+        min-width: calc(100vw - 96px);
+    }
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 1001px) and (max-width: 1500px) {
+    .myCard {
+        width: 100%;
+        min-width: calc(50vw - 96px);
+    }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 1501px) {
+    .myCard {
+        width: 100%;
+        min-width: calc(33vw - 96px);
+    }
+}
+
+/************************************************* LISTAGEM CSS *************************************************/
+.btn-cadastro {
+    width: 300px !important;
+}
+
 /*************************************************** OTHERS CSS ***************************************************/
 
 .formEmployee {

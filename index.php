@@ -27,18 +27,18 @@
         <script src="script/main.js"></script>
     </head>
     <body>
-        <div class="wrapper">
-            <?php include __DIR__ . "/layouts/header.php"; ?>
+        <?php include __DIR__ . "/layouts/header.php"; ?>
+    
+        <!-- PUBLIC -->
+        <div class="myPage" id="page-public-home"> <?php include __DIR__ . "/pages/public/home.php"; ?> </div>
+        <div class="myPage" id="page-public-properties"> <?php include __DIR__ . "/pages/public/properties.php"; ?> </div>
         
-            <!-- PUBLIC -->
-            <div class="myPage" id="page-public-home"> <?php include __DIR__ . "/pages/public/home.php"; ?> </div>
-            <div class="myPage" id="page-public-properties"> <?php include __DIR__ . "/pages/public/properties.php"; ?> </div>
-            
-            <!-- PRIVATE -->
-            <div class="myPage" id="page-private-clientsList"> <?php include __DIR__ . "/pages/private/clients/clientsList.php"; ?> </div>
+        <!-- PRIVATE -->
+        <div class="myPage" id="page-private-clientsList"> <?php include __DIR__ . "/pages/private/clients/clientsList.php"; ?> </div>
+        <div class="myPage" id="page-private-employeesList"> <?php include __DIR__ . "/pages/private/employees/employeesList.php"; ?> </div>
+        <div class="myPage" id="page-private-propertiesList"> <?php include __DIR__ . "/pages/private/properties/propertiesList.php"; ?> </div>
 
 
-            <?php include __DIR__ . "/layouts/footer.php"; ?>
-        </div>
+        <?php include __DIR__ . "/layouts/footer.php"; ?>
     </body>
 </html>

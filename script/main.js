@@ -8,8 +8,16 @@ $(document).ready(() => {
         showPublicProperties();
     })
 
+    $("#navbar-private-employees").click(() => {
+        showPrivateEmployeesList();
+    })
+
     $("#navbar-private-clients").click(() => {
         showPrivateClientsList();
+    })
+
+    $("#navbar-private-properties").click(() => {
+        showPrivatePropertiesList();
     })
     
     let showPublicHome = () => {
@@ -22,9 +30,19 @@ $(document).ready(() => {
         $("#page-public-properties").show("fast");
     };
 
+    let showPrivateEmployeesList = () => {
+        $(".myPage").hide("fast");
+        $("#page-private-employeesList").show("fast");
+    };
+
     let showPrivateClientsList = () => {
         $(".myPage").hide("fast");
         $("#page-private-clientsList").show("fast");
+    };
+
+    let showPrivatePropertiesList = () => {
+        $(".myPage").hide("fast");
+        $("#page-private-propertiesList").show("fast");
     };
 
     showPublicHome();
@@ -37,4 +55,8 @@ $(document).ready(() => {
     }, function() {
         $(this).css("background-color", "#f8f8f8")
     })
+
+    /************************************************** FUNÇÕES DE LISTAGEM **************************************************/
+    // $(".btn-cadastro").click(function())
+
 })
