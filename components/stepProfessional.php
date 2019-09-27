@@ -1,5 +1,5 @@
 <!-- TAB - PROFESSIONAL INFORMATIONS -->
-<fieldset id="professional">
+<fieldset>
     <div class="form-row">
         <!-- USER -->
         <div class="form-group col-sm-6">

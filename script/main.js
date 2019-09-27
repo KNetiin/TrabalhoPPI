@@ -1,55 +1,50 @@
 $(document).ready(() => {
-    /*************************************************** FUNÇÕES DO NAVBAR ***************************************************/
+    /*************************************************** FUNÇÕES DA NAVBAR ***************************************************/
+    let page = localStorage.getItem("page")
+    
+    if (!page) {
+        page = "page-public-home"
+    }
+
+    let showPage = (id) => {
+        $(".myPage").hide("fast");
+        $(`#${id}`).show("fast");
+        localStorage.setItem('page', id)
+        localStorage.removeItem('formOrList')
+    };
+    showPage(page)
+
     $("#navbar-public-home").click(() => {
-        showPublicHome();
+        showPage("page-public-home")
     })
 
     $("#navbar-public-properties").click(() => {
-        showPublicProperties();
+        showPage("page-public-properties")
     })
 
     $("#navbar-private-employees").click(() => {
-        showPrivateEmployeesList();
+        showPage("page-private-employeesList")
     })
 
     $("#navbar-private-clients").click(() => {
-        showPrivateClientsList();
+        showPage("page-private-clientsList")
     })
 
     $("#navbar-private-properties").click(() => {
-        showPrivatePropertiesList();
+        showPage("page-private-propertiesList")
     })
     
     $("#imgNavbar").click(() => {
-        showPublicHome();
+        showPage("page-public-home")
     })
 
-    let showPublicHome = () => {
-        $(".myPage").hide("fast");
-        $("#page-public-home").show("fast");
-    };
-
-    let showPublicProperties = () => {
-        $(".myPage").hide("fast");
-        $("#page-public-properties").show("fast");
-    };
-
-    let showPrivateEmployeesList = () => {
-        $(".myPage").hide("fast");
-        $("#page-private-employeesList").show("fast");
-    };
-
-    let showPrivateClientsList = () => {
-        $(".myPage").hide("fast");
-        $("#page-private-clientsList").show("fast");
-    };
-
-    let showPrivatePropertiesList = () => {
-        $(".myPage").hide("fast");
-        $("#page-private-propertiesList").show("fast");
-    };
-
-    showPublicHome();
+    /****************************************************FUNÇÕES DO RODAPÉ*****************************************************/
+    function adjustDiv() {
+        let div = document.getElementById('conteudo')
+        let footer = document.getElementById('footer').clientHeight
+        div.style.paddingBottom = `${footer}px`
+    }
+    adjustDiv();
 
     /*************************************************** FUNÇÕES DO STEPPER ***************************************************/
 
@@ -59,16 +54,4 @@ $(document).ready(() => {
     }, function() {
         $(this).css("background-color", "#f8f8f8")
     })
-
-    /************************************************** FUNÇÕES DE LISTAGEM **************************************************/
-    // $(".btn-cadastro").click(function())
-
-    /****************************************************FUNÇÕES DO RODAPÉ*****************************************************/
-
-    function adjustDiv() {
-        let div = document.getElementById('conteudo')
-        let footer = document.getElementById('footer').clientHeight
-        div.style.paddingBottom = `${footer}px`
-    }
-    adjustDiv();
 })

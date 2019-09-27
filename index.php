@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- TITLE -->
-        <title>Imobiliária F&F</title>
+        <title>Confraria Imóveis</title>
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -37,8 +37,11 @@
                 <div class="myPage" id="page-public-properties"> <?php include __DIR__ . "/pages/public/properties.php"; ?> </div>
 
                 <!-- PRIVATE -->
+                <div class="myPage" id="page-private-employeesList"> <?php include __DIR__ . "/pages/private/employees/employeesList.php"; ?> </div>
                 <div class="myPage" id="page-private-clientsList"> <?php include __DIR__ . "/pages/private/clients/clientsList.php"; ?> </div>
+                <div class="myPage" id="page-private-propertiesList"> <?php include __DIR__ . "/pages/private/properties/propertiesList.php"; ?> </div>
             </div>
+
             <div id="footer">
                 <?php include __DIR__ . "/layouts/footer.php"; ?>
             </div>

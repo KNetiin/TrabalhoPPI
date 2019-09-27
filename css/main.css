@@ -108,15 +108,20 @@ li p {
     display: none;
 }
 
-/* Mobile Styles */
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 767.98px) {
     .myCard {
         width: 100%;
-        min-width: calc(100vw - 96px);
+        min-width: calc(100vw - 32px);
     }
 }
 
-/* Tablet Styles */
+@media only screen and (min-width: 768px) and (max-width: 1000px) {
+    .myCard {
+        width: 100%;
+        min-width: calc(100vw - 114px);
+    }
+}
+
 @media only screen and (min-width: 1001px) and (max-width: 1500px) {
     .myCard {
         width: 100%;
@@ -124,7 +129,6 @@ li p {
     }
 }
 
-/* Desktop Styles */
 @media only screen and (min-width: 1501px) {
     .myCard {
         width: 100%;
@@ -132,18 +136,16 @@ li p {
     }
 }
 
-/************************************************* LISTAGEM CSS *************************************************/
-.btn-cadastro {
-    width: 300px !important;
+/*************************************************** OTHERS CSS ***************************************************/
+.myDisplayNone {
+    display: none;
 }
 
-/*************************************************** OTHERS CSS ***************************************************/
-
-.formEmployee {
+.myForm {
     border-radius: 10px;
 }
 
-.formEmployeeHeader {
+.formHeader {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }

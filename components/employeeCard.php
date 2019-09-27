@@ -1,4 +1,4 @@
-<div class="card myCard m-1">
+<div class="card myCard mb-2">
     <div class="card-body">
         <h5 class="card-title">Antonio Neto</h5>
         <h6 class="card-subtitle mb-2 text-muted">059.265.732-02</h6>
@@ -12,10 +12,10 @@
         </div>
 
         <!-- LOCATION INFORMATIONS -->
-        <div class="collapseHeader" id="location2-collapse-header">
+        <div class="collapseHeader" id="location-collapse-header">
             <p class="mb-0">Informações de Localização</p>
         </div>
-        <div id="location2-collapse" class="collapseBody">
+        <div id="location-collapse" class="collapseBody">
             <div class="row card-text">
                 <div class="col-sm-5"> <p class="card-text">CEP: </p> </div>
                 <div class="col-sm-7"> <p class="ml-2 card-text text-muted">38659-010</p> </div>

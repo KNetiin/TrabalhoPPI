@@ -1,7 +1,7 @@
 <div class="container pt-lg-3">
-    <div class="card formEmployee">
+    <div class="card myForm">
         <!-- HEADER -->
-        <div class="card-body text-white bg-dark formEmployeeHeader">
+        <div class="card-body text-white bg-dark formHeader">
             <h2 class="card-title text-center">Cadastro de Funcionário</h2>
         </div>
 
@@ -42,20 +42,25 @@
         <div class="card-body">
             <form action="employeePost.php" method="POST">
 
-                <?php include "components/stepPersonal.php"; ?>
-                <?php include "components/stepLocation.php"; ?>
-                <?php include "components/stepProfessional.php"; ?>
-
+                <div id="personal-employee-form">
+                    <?php include "components/stepPersonal.php"; ?>
+                </div>
+                <div id="location-employee-form" class="myDisplayNone">
+                    <?php include "components/stepLocation.php"; ?>
+                </div>
+                <div id="professional-employee-form" class="myDisplayNone">
+                    <?php include "components/stepProfessional.php"; ?>
+                </div>
 
                 <div class="row">
-                    <div class="col-6" id="back">
-                        <button type="button" onclick="backStep()" class="btn btn-danger btn-block">Voltar</button>
+                    <div class="col-6 myDisplayNone" id="back-employee-form">
+                        <button type="button" id="button-employee-back" class="btn btn-danger btn-block">Voltar</button>
                     </div>
-                    <div class="col-6" id="next">
-                        <button type="button" onclick="nextStep()" class="btn btn-success btn-block">Próximo</button>
+                    <div class="col-6" id="next-employee-form">
+                        <button type="button" id="button-employee-next" class="btn btn-success btn-block">Próximo</button>
                     </div>
-                    <div class="col-6" id="save">
-                        <button type="submit" onclick="nextStep()" class="btn btn-success btn-block">Salvar</button>
+                    <div class="col-6 myDisplayNone" id="save-employee-form">
+                        <button type="submit" id="button-employee-save" class="btn btn-success btn-block">Salvar</button>
                     </div>
                 </div>
             </form>

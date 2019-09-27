@@ -1,5 +1,5 @@
 <!-- TAB - PROPERTY INFORMATIONS -->
-<fieldset id="property">
+<fieldset>
     <div class="form-row">
         <!-- QT BEDROOMS -->
         <div class="form-group col-sm-6 col-md-4">

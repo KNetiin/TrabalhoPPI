@@ -1,5 +1,5 @@
 <!-- TAB - ADDITIONAL INFORMATIONS -->
-<fieldset id="additional">
+<fieldset>
     <div class="form-row">
         <!-- GENDER -->
         <div class="form-group col-sm-6">

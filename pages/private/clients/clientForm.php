@@ -1,14 +1,14 @@
 <div class="container pt-lg-3">
-    <div class="card formEmployee">
+    <div class="card myForm">
         <!-- HEADER -->
-        <div class="card-body text-white bg-dark formEmployeeHeader">
+        <div class="card-body text-white bg-dark formHeader">
             <h2 class="card-title text-center">Cadastro de Clientes Proprietários</h2>
         </div>
 
         <!-- NAVIGATION -->
         <div class="card-body text-center">
             <div class="row">
-                <div class="col-4 stepHeader stepHeaderLeft" id="personal-header">
+                <div class="col-4 stepHeader stepHeaderLeft" id="personal-client-header">
                     <div class="row p-1 align-items-center justify-content-center">
                         <i class="fas fa-user stepIcon"></i>
                         <div class="d-inline pt-2">
@@ -17,7 +17,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4 stepHeader stepHeaderMiddle" id="location-header">
+                <div class="col-4 stepHeader stepHeaderMiddle" id="location-client-header">
                     <div class="row p-1 align-items-center justify-content-center">
                         <i class="fas fa-street-view stepIcon"></i>
                         <div class="d-inline pt-2">
@@ -42,24 +42,28 @@
         <div class="card-body">
             <form action="clientPost.php" method="POST">
 
-                <?php include  __DIR__ . "/../../../components/stepPersonal.php"; ?>
-                <?php include  __DIR__ . "/../../..//components/stepLocation.php"; ?>
-                <?php include  __DIR__ . "/../../..//components/stepAdditional.php"; ?>
+                <div id="personal-client-form">
+                    <?php include "components/stepPersonal.php"; ?>
+                </div>
+                <div id="location-client-form" class="myDisplayNone">
+                    <?php include "components/stepLocation.php"; ?>
+                </div>
+                <div id="additional-client-form" class="myDisplayNone">
+                    <?php include "components/stepAdditional.php"; ?>
+                </div>
 
                 <div class="row">
-                    <div class="col-6" id="back">
-                        <button type="button" onclick="backStep()" class="btn btn-danger btn-block">Voltar</button>
+                    <div class="col-6 myDisplayNone" id="back-client-form">
+                        <button type="button" id="button-client-back" class="btn btn-danger btn-block">Voltar</button>
                     </div>
-                    <div class="col-6" id="next">
-                        <button type="button" onclick="nextStep()" class="btn btn-success btn-block">Próximo</button>
+                    <div class="col-6" id="next-client-form">
+                        <button type="button" id="button-client-next" class="btn btn-success btn-block">Próximo</button>
                     </div>
-                    <div class="col-6" id="save">
-                        <button type="submit" onclick="nextStep()" class="btn btn-success btn-block">Salvar</button>
+                    <div class="col-6 myDisplayNone" id="save-client-form">
+                        <button type="submit" id="button-client-save" class="btn btn-success btn-block">Salvar</button>
                     </div>
                 </div>
             </form>
         </div>
     </div>
 </div>
-
-<script src="../../../script/clientForm.js"></script>

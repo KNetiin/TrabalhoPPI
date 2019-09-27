@@ -1,5 +1,5 @@
 <!-- TAB - PERSONAL INFORMATIONS -->
-<fieldset id="personal">
+<fieldset>
     <div class="form-row">
         <!-- NAME -->
         <div class="form-group col-sm-6">

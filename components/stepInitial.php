@@ -1,5 +1,5 @@
 <!-- TAB - INITIAL INFORMATIONS -->
-<fieldset id="initial">
+<fieldset>
     <div class="form-row">
         <!-- TYPE -->
         <div class="form-group col-md-4">
