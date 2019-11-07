@@ -91,7 +91,7 @@ try
   // TABLE Immobile
   $createTableImmobile = "
     CREATE TABLE Immobile (
-      immobileCode varchar(50),
+      immobileCode varchar(13),
       codProp varchar(14) NOT NULL,
       constraint codProp FOREIGN KEY (codProp) REFERENCES PropCustomers (cpf),
       purpose varchar(35) NOT NULL,

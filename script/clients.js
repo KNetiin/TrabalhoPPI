@@ -76,7 +76,7 @@ $(document).ready(() => {
 
     $("#button-client-back").click(backStep)
     $("#button-client-next").click(nextStep)
-    $("#button-client-save").click(showList)
+    // $("#button-client-save").click(showList)
 
     // ADICIONANDO EVENTO PARA CADA HEADER DO STEPPER
     $("#personal-client-header").click(showPersonalStepClient)

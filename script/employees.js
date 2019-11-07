@@ -76,7 +76,7 @@ $(document).ready(() => {
 
     $("#button-employee-back").click(backStepEmployee)
     $("#button-employee-next").click(nextStepEmployee)
-    $("#button-employee-save").click(showList)
+    // $("#button-employee-save").click(showList)
 
     // ADICIONANDO EVENTO PARA CADA HEADER DO STEPPER
     $("#personal-header").click(showPersonalStepEmployee)

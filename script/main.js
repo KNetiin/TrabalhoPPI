@@ -1,5 +1,6 @@
 $(document).ready(() => {
     /*************************************************** FUNÇÕES DA NAVBAR ***************************************************/
+    delete $(".myPage")
     let page = localStorage.getItem("page")
     
     if (!page) {

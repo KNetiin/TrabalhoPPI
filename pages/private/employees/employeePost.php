@@ -1,50 +1,94 @@
-<!DOCTYPE html>
-<html>
-<body>
 <?php
 
+// require_once "../../../utility/conexaoMysql.php";
+// require_once "../../../utility/filtraEntrada.php";
+
+define("HOST", "fdb22.awardspace.net");
+define("USER", "3159096_mysql");
+define("PASSWORD", "ppi12345678");
+define("DATABASE", "3159096_mysql");
+
+function conectaAoMySQL()
+{
+    $conn = new mysqli(HOST, USER, PASSWORD, DATABASE);
+    if ($conn->connect_error)
+        throw new Exception('Falha na conexão com o MySQL: ' . $conn->connect_error);
+
+    return $conn;
+}
+
+// Valida uma string removendo alguns caracteres
+// especiais que poderiam ser provenientes
+// de ataques do tipo HTML/CSS/JavaScript Injection
+function filtraEntrada($dado) 
+{
+  $dado = trim($dado);               // remove espaços no inicio e no final da string
+  $dado = stripslashes($dado);       // remove contra barras: "cobra d\'agua" vira "cobra d'agua"
+  $dado = htmlspecialchars($dado);   // caracteres especiais do HTML (como < e >) são codificados
+
+  return $dado;
+}
+
+echo 'entrou aki';
+
+function cadastraFuncionario($conn, $employeeName, $cpf, $phone, $cellphone, $email, $zipCode, $state, $city, $district, $address, $addressNumber, $complement, $userName, $userPassword, $enterprisePhone, $profession, $salary, $dateOfEntry)
+{
+  $insert = "
+    INSERT INTO Employees (employeeName, cpf, phone, cellphone, email, zipCode, state, city, district, address, addressNumber, complement, userName, userPassword, enterprisePhone, profession, salary, dateOfEntry)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+  ";
+
+  // prepara a declaração SQL (stmt é uma abreviação de statement)
+  if (!$stmt = $conn->prepare($insert))
+      throw new Exception("Falha na operacao prepare: " . $conn->error);
+
+  // Faz a ligação dos parâmetros em aberto com os valores.
+  if (!$stmt->bind_param($employeeName, $cpf, $phone, $cellphone, $email, $zipCode, $state, $city, $district, $address, $addressNumber, $complement, $userName, $userPassword, $enterprisePhone, $profession, $salary, $dateOfEntry))
+      throw new Exception("Falha na operacao bind_param: " . $stmt->error);
+
+  if (!$stmt->execute())
+      throw new Exception("Falha na operacao execute: " . $stmt->error);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+  // Define e inicializa as variáveis
+  $employeeName = $cpf = $phone = $cellphone = $email = $zipCode = $state = $city = $district = $address = $addressNumber = $complement = $userName = $userPassword = $enterprisePhone = $profession = $salary = $dateOfEntry = "";
+
   // PERSONAL INFORMATIONS
-	$name = $_POST["name"];
-	$cpf = $_POST["cpf"];
-	$phone = $_POST["phone"];
-  $cellphone = $_POST["cellphone"];
-  $email = $_POST["email"];
+  $employeeName = filtraEntrada($_POST["name"]);
+  $cpf  = filtraEntrada($_POST["cpf"]);
+  $phone  = filtraEntrada($_POST["phone"]);
+  $cellphone  = filtraEntrada($_POST["cellphone"]);
+  $email  = filtraEntrada($_POST["email"]);
 
   // LOCATION INFORMATIONS
-	$cep = $_POST["cep"];
-	$state = $_POST["state"];
-	$city = $_POST["city"];
-	$district = $_POST["district"];
-	$address = $_POST["address"];
-	$number = $_POST["number"];
-  $complement = $_POST["complement"];
+  $zipCode  = filtraEntrada($_POST["cep"]);
+  $state  = filtraEntrada($_POST["state"]);
+  $city  = filtraEntrada($_POST["city"]);
+  $district  = filtraEntrada($_POST["district"]);
+  $address  = filtraEntrada($_POST["address"]);
+  $addressNumber  = filtraEntrada($_POST["number"]);
+  $complement  = filtraEntrada($_POST["complement"]);
 
   // PROFESSIONAL INFORMATIONS
-	$user       = $_POST["user"];
-	$password       = $_POST["password"];
-	$enterprisePhone       = $_POST["enterprisePhone"];
-	$profession       = $_POST["profession"];
-	$salary       = $_POST["salary"];
-	$dateOfEntry       = $_POST["dateOfEntry"];
+  $userName  = filtraEntrada($_POST["user"]);
+  $userPassword  = filtraEntrada($_POST["password"]);
+  $enterprisePhone  = filtraEntrada($_POST["enterprisePhone"]);
+  $profession  = filtraEntrada($_POST["profession"]);
+  $salary  = filtraEntrada($_POST["salary"]);
+  $dateOfEntry  = filtraEntrada($_POST["dateOfEntry"]);
 
-	echo "name: $name <br/>";
-	echo "cpf: $cpf <br/>";
-	echo "phone: $phone <br/>";
-	echo "cellphone: $cellphone <br/>";
-	echo "email: $email <br/>";
-	echo "cep: $cep <br/>";
-	echo "state: $state <br/>";
-	echo "city: $city <br/>";
-	echo "district: $district <br/>";
-	echo "address: $address <br/>";
-	echo "number: $number <br/>";
-	echo "complement: $complement <br/>";
-	echo "user: $user <br/>";
-	echo "password: $password <br/>";
-	echo "enterprisePhone: $enterprisePhone <br/>";
-	echo "profession: $profession <br/>";
-	echo "salary: $salary <br/>";
-	echo "dateOfEntry: $dateOfEntry <br/>";
+  try {
+    // Função definida no arquivo conexaoMysql.php
+    $conn = conectaAoMySQL();
+  
+    cadastraFuncionario($conn, $employeeName, $cpf, $phone, $cellphone, $email, $zipCode, $state, $city, $district, $address, $addressNumber, $complement, $userName, $userPassword, $enterprisePhone, $profession, $salary, $dateOfEntry);
+  }
+  catch (Exception $e) {
+    $msgErro = $e->getMessage();
+    echo $msgErro;
+  }
+}
+
 ?>
-</body>
-</html>

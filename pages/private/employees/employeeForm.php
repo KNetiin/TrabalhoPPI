@@ -40,7 +40,7 @@
 
         <!-- FORM -->
         <div class="card-body">
-            <form action="employeePost.php" method="POST">
+            <form action="http://fuguete-e-farofa.atwebpages.com/pages/private/employees/employeePost.php" method="POST">
 
                 <div id="personal-employee-form">
                     <?php include "components/stepPersonal.php"; ?>

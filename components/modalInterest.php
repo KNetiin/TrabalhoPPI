@@ -13,19 +13,19 @@
                 <div class="modal-body">
                     <div class="form-group row">
                         <label for="username">Nome Completo</label>
-                        <input type="email" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Usuário">
+                        <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Usuário">
                     </div>
                     <div class="form-group row">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Email">
+                        <input type="email" class="form-control" placeholder="Email">
                     </div>
                     <div class="form-group row">
                         <label for="telefone">Telefone</label>
-                        <input type="text" class="form-control" id="telefone" placeholder="Telefone">
+                        <input type="text" class="form-control" placeholder="Telefone">
                     </div>
                     <div class="form-group row">
                         <label for="description">Descrição da Proposta</label>
-                        <textarea class="form-control" rows="5" id="description" placeholder="Descrição"></textarea>
+                        <textarea class="form-control" rows="5" placeholder="Descrição"></textarea>
                     </div>
                 </div>
                 <div class="modal-footer">
