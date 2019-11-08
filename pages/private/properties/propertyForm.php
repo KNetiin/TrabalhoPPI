@@ -26,7 +26,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3 stepHeader stepHeaderMiddle" id="location-property-header">
+                <div class="col-3 stepHeader stepHeaderMiddle2" id="location-property-header">
                     <div class="row p-1 align-items-center justify-content-center">
                         <i class="fas fa-user-plus stepIcon"></i>
                         <div class="d-inline pt-2">
@@ -39,9 +39,8 @@
                     <div class="row p-1 align-items-center justify-content-center">
                         <i class="fas fa-images stepIcon"></i>
                         <div class="d-inline pt-2">
-                            <!-- <h6>Fotos do</h6>
-                            <h6>Imóvel</h6> -->
-                            <h6>(Ñ IMPLEMENTADO)</h6>
+                            <h6>Fotos do</h6>
+                            <h6>Imóvel</h6>
                         </div>
                     </div>
                 </div>
@@ -60,6 +59,9 @@
                 </div>
                 <div id="location-property-form" class="myDisplayNone">
                     <?php include "components/stepLocation.php"; ?>
+                </div>
+                <div id="images-property-form" class="myDisplayNone">
+                    <?php include "components/stepImages.php"; ?>
                 </div>
 
                 <div class="row">

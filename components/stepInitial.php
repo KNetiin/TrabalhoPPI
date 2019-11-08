@@ -4,7 +4,7 @@
         <!-- TYPE -->
         <div class="form-group col-md-4">
             <label for="type">Tipo do Imóvel:</label>
-            <select class="custom-select form-control" name="type">
+            <select class="custom-select form-control" name="type" onChange="changeType(this)">
                 <option selected value="casa">Casa</option>
                 <option value="apartamento">Apartamento</option>
             </select>
@@ -37,3 +37,15 @@
         </div>
     </div>
 </fieldset>
+
+<script>
+function changeType (el) {
+    if (el.value === 'casa') {
+        $("#apartamento").hide("fast")
+        $("#casa").show("fast")
+    } else {
+        $("#apartamento").show("fast")
+        $("#casa").hide("fast")
+    }
+};
+</script>

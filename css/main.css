@@ -51,6 +51,11 @@ h2 {
     border-bottom: 2px solid #cecece;
 }
 
+.stepHeaderMiddle2 {
+    border: 2px solid #cecece;
+    border-right-width: 0px;
+}
+
 .stepHeaderRight {
     border: 2px solid #cecece;
     border-top-right-radius: 20px;

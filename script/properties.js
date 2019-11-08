@@ -29,6 +29,7 @@ $(document).ready(() => {
         $("#initial-property-form").show("fast")
         $("#property-property-form").hide("fast")
         $("#location-property-form").hide("fast")
+        $("#images-property-form").hide("fast")
         $("#next-property-form").show("fast")
         $("#save-property-form").hide("fast")
         $("#back-property-form").hide("fast")
@@ -40,6 +41,7 @@ $(document).ready(() => {
         $("#initial-property-form").hide("fast")
         $("#property-property-form").show("fast")
         $("#location-property-form").hide("fast")
+        $("#images-property-form").hide("fast")
         $("#back-property-form").show("fast")
         $("#next-property-form").show("fast")
         $("#save-property-form").hide("fast")
@@ -51,7 +53,20 @@ $(document).ready(() => {
         $("#initial-property-form").hide("fast")
         $("#property-property-form").hide("fast")
         $("#location-property-form").show("fast")
-        $("#back-property-form").hide("fast")
+        $("#images-property-form").hide("fast")
+        $("#back-property-form").show("fast")
+        $("#next-property-form").show("fast")
+        $("#save-property-form").hide("fast")
+    }
+
+    // MOSTRA SOMENTE STEP PROFESSIONAL
+    let showImagesStepLocation = () => {
+        step = 3
+        $("#initial-property-form").hide("fast")
+        $("#property-property-form").hide("fast")
+        $("#location-property-form").hide("fast")
+        $("#images-property-form").show("fast")
+        $("#back-property-form").show("fast")
         $("#next-property-form").hide("fast")
         $("#save-property-form").show("fast")
     }
@@ -62,6 +77,8 @@ $(document).ready(() => {
             showInitialStepProperty()
         } else if (step === 2) {
             showPropertyStepProperty()
+        } else if (step === 3) {
+            showLocationStepLocation()
         }
     }
 
@@ -71,6 +88,8 @@ $(document).ready(() => {
             showPropertyStepProperty()
         } else if (step === 1) {
             showLocationStepLocation()
+        } else if (step === 2) {
+            showImagesStepLocation()
         }
     }
 
@@ -82,23 +101,6 @@ $(document).ready(() => {
     $("#initial-property-header").click(showInitialStepProperty)
     $("#property-property-header").click(showPropertyStepProperty)
     $("#location-property-header").click(showLocationStepLocation)
-
-    /***************************************************** FUNÇÕES LIST *****************************************************/
-
-    // MOSTRA SOMENTE COLLAPSE LOCATION
-    let showLocationCollapseProperty = () => {
-        $("#location3-collapse").slideToggle("fast")
-        $("#property-collapse").hide("fast")
-    }
-
-    // MOSTRA SOMENTE COLLAPSE ADDITIONAL
-    let showPropertyCollapseProperty = () => {
-        $("#property-collapse").slideToggle("fast")
-        $("#location3-collapse").hide("fast")
-    }
-
-    // ADICIONANDO EVENTO PARA CADA HEADER DO CARD
-    $("#location3-collapse-header").click(showLocationCollapseProperty)
-    $("#property-collapse-header").click(showPropertyCollapseProperty)
+    $("#images-property-header").click(showImagesStepLocation)
 
 })
