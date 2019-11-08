@@ -1,44 +1,60 @@
-<!DOCTYPE html>
-<html>
-<body>
 <?php
 
+require_once "../../../utility/conexaoMysql.php";
+require_once "../../../utility/filtraEntrada.php";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	// Define e inicializa as variáveis
+	$customerName = $cpf = $phone = $cellphone = $email = $zipCode = $state = $city = $district = $address = $addressNumber = $complement = $gender = $maritalStatus = $profession = "";
+
   // PERSONAL INFORMATIONS
-	$name = $_POST["name"];
-	$cpf = $_POST["cpf"];
-	$phone = $_POST["phone"];
-  $cellphone = $_POST["cellphone"];
-  $email = $_POST["email"];
+	$customerName = filtraEntrada($_POST["name"]);
+	$cpf = filtraEntrada($_POST["cpf"]);
+	$phone = filtraEntrada($_POST["phone"]);
+	$cellphone = filtraEntrada($_POST["cellphone"]);
+	$email = filtraEntrada($_POST["email"]);
 
   // LOCATION INFORMATIONS
-	$cep = $_POST["cep"];
-	$state = $_POST["state"];
-	$city = $_POST["city"];
-	$district = $_POST["district"];
-	$address = $_POST["address"];
-	$number = $_POST["number"];
-  $complement = $_POST["complement"];
+	$zipCode = filtraEntrada($_POST["cep"]);
+	$state = filtraEntrada($_POST["state"]);
+	$city = filtraEntrada($_POST["city"]);
+	$district = filtraEntrada($_POST["district"]);
+	$address = filtraEntrada($_POST["address"]);
+	$addressNumber = filtraEntrada($_POST["number"]);
+	$complement = filtraEntrada($_POST["complement"]);
 
   // ADDITIONAL INFORMATIONS
-	$gender = $_POST["gender"];
-	$status = $_POST["status"];
-	$profession = $_POST["profession"];
+	$gender = filtraEntrada($_POST["gender"]);
+	$maritalStatus = filtraEntrada($_POST["status"]);
+	$profession = filtraEntrada($_POST["profession"]);
 
-	echo "name: $name <br/>";
-	echo "cpf: $cpf <br/>";
-	echo "phone: $phone <br/>";
-	echo "cellphone: $cellphone <br/>";
-	echo "email: $email <br/>";
-	echo "cep: $cep <br/>";
-	echo "state: $state <br/>";
-	echo "city: $city <br/>";
-	echo "district: $district <br/>";
-	echo "address: $address <br/>";
-	echo "number: $number <br/>";
-	echo "complement: $complement <br/>";
-	echo "gender: $gender <br/>";
-	echo "status: $status <br/>";
-	echo "profession: $profession <br/>";
+  try {
+    // Função definida no arquivo conexaoMysql.php
+    $conn = conectaAoMySQL();
+
+    $insert = "
+      INSERT INTO PropCustomers (customerName, cpf, phone, cellphone, email, zipCode, state, city, district, address, addressNumber, complement, gender, maritalStatus, profession)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+    ";
+
+    // prepara a declaração SQL (stmt é uma abreviação de statement)
+    if (!$stmt = $conn->prepare($insert))
+        throw new Exception("Falha na operacao prepare: " . $conn->error);
+
+    // Faz a ligação dos parâmetros em aberto com os valores.
+    if (!$stmt->bind_param("ssssssssssissss", $customerName, $cpf, $phone, $cellphone, $email, $zipCode, $state, $city, $district, $address, $addressNumber, $complement, $gender, $maritalStatus, $profession))
+        throw new Exception("Falha na operacao bind_param: " . $stmt->error);
+
+    if (!$stmt->execute())
+        throw new Exception("Falha na operacao execute: " . $stmt->error);
+
+    $conn->close();
+  }
+  catch (Exception $e) {
+    $msgErro = $e->getMessage();
+    echo $msgErro;
+    $conn->close();
+  }
+}
+
 ?>
-</body>
-</html>

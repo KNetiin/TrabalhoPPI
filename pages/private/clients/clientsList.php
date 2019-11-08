@@ -5,20 +5,7 @@
             <div class="d-inline">Novo</div>
         </button>
     
-        <div class="card-deck">
-            <?php include __DIR__ . "/../../../components/clientCard.php"; ?>
-            <?php include __DIR__ . "/../../../components/clientCard.php"; ?>
-            <?php include __DIR__ . "/../../../components/clientCard.php"; ?>
-            <?php include __DIR__ . "/../../../components/clientCard.php"; ?>
-            <?php include __DIR__ . "/../../../components/clientCard.php"; ?>
-            <?php include __DIR__ . "/../../../components/clientCard.php"; ?>
-            <?php include __DIR__ . "/../../../components/clientCard.php"; ?>
-            <?php include __DIR__ . "/../../../components/clientCard.php"; ?>
-            <?php include __DIR__ . "/../../../components/clientCard.php"; ?>
-            <?php include __DIR__ . "/../../../components/clientCard.php"; ?>
-            <?php include __DIR__ . "/../../../components/clientCard.php"; ?>
-            <?php include __DIR__ . "/../../../components/clientCard.php"; ?>
-        </div>
+        <?php include __DIR__ . "/../../../components/clientCard.php"; ?>
     </div>
 
     <div id="clientFormDiv" class="myDisplayNone">

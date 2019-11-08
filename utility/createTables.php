@@ -184,11 +184,13 @@ try
     throw new Exception("Falha no INSERT da tabela PROPCUSTOMERS: " . $conn->error);
   }
 
+  $conn->close();
 }
 catch (Exception $e)
 {
   $msgErro = $e->getMessage();
   echo $msgErro;
+  $conn->close();
 }
 
 ?>

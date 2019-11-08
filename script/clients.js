@@ -82,21 +82,4 @@ $(document).ready(() => {
     $("#personal-client-header").click(showPersonalStepClient)
     $("#location-client-header").click(showLocationStepClient)
     $("#additional-header").click(showAdditional)
-
-    /***************************************************** FUNÇÕES LIST *****************************************************/
-    // MOSTRA SOMENTE COLLAPSE LOCATION
-    let showLocationCollapseClient = () => {
-        $("#location2-collapse").slideToggle("fast")
-        $("#additional-collapse").hide("fast")
-    }
-
-    // MOSTRA SOMENTE COLLAPSE ADDITIONAL
-    let showAdditionalCollapse = () => {
-        $("#additional-collapse").slideToggle("fast")
-        $("#location2-collapse").hide("fast")
-    }
-
-    // ADICIONANDO EVENTO PARA CADA HEADER DO CARD
-    $("#location2-collapse-header").click(showLocationCollapseClient)
-    $("#additional-collapse-header").click(showAdditionalCollapse)
 })
