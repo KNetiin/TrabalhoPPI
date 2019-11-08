@@ -50,7 +50,7 @@
 
         <!-- FORM -->
         <div class="card-body">
-            <form method="POST">
+            <form enctype="multipart/form-data" method="POST">
 
                 <div id="initial-property-form">
                     <?php include "components/stepInitial.php"; ?>

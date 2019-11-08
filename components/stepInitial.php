@@ -23,8 +23,8 @@
         <div class="form-group col-sm-6 col-md-4">
             <label for="availability">Disponibilidade:</label>
             <select class="custom-select form-control" name="availability">
-                <option selected value="disponivel">Disponível</option>
-                <option value="indisponivel">Indisponível</option>
+                <option selected value="1">Disponível</option>
+                <option value="0">Indisponível</option>
             </select>
         </div>
     </div>

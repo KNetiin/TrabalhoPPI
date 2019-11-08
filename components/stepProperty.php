@@ -43,8 +43,8 @@
         <div class="form-group col-sm-6">
             <label for="inbuiltCabinet">Armário Embutido:</label>
             <select class="custom-select form-control" name="inbuiltCabinet">
-                <option selected value="disponivel">Possui</option>
-                <option value="indisponivel">Não Possui</option>
+                <option selected value="1">Possui</option>
+                <option value="0">Não Possui</option>
             </select>
         </div>
 
