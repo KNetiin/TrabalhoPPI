@@ -93,25 +93,24 @@ try
     CREATE TABLE Immobile (
       immobileCode varchar(13),
       codProp varchar(14) NOT NULL,
-      constraint codProp FOREIGN KEY (codProp) REFERENCES PropCustomers (cpf),
       purpose varchar(35) NOT NULL,
+      availability integer(1) NOT NULL,
+      description varchar(500) NOT NULL,
+      rooms integer NOT NULL,
+      suites integer NOT NULL,
+      livingRooms integer NOT NULL,
+      diningRooms integer NOT NULL,
+      parkingSpaces integer NOT NULL,
       immobileValue float NOT NULL,
       zipCode varchar(9) NOT NULL,
       state varchar(2) NOT NULL,
       city varchar(30) NOT NULL,
+      district varchar(30) NOT NULL,
       address varchar(50) NOT NULL,
       addressNumber integer NOT NULL,
       complement varchar(30) NOT NULL,
-      district varchar(30) NOT NULL,
-      rooms integer NOT NULL,
-      suites integer NOT NULL,
-      description varchar(500) NOT NULL,
-      availability integer(1) NOT NULL,
-      livingRooms integer NOT NULL,
-      diningRooms integer NOT NULL,
-      parkingSpaces integer NOT NULL,
-      wardrobes integer(1) NOT NULL,
-      PRIMARY KEY (immobileCode)
+      PRIMARY KEY (immobileCode),
+      constraint codProp FOREIGN KEY (codProp) REFERENCES PropCustomers (cpf)
     );
   ";
 
@@ -119,12 +118,23 @@ try
     DROP TABLE IF EXISTS Immobile;
   ";
 
+  $insertImmobile1 = "
+    INSERT INTO Immobile (immobileCode, codProp, purpose, availability, description, rooms, suites, livingRooms, diningRooms, parkingSpaces, immobileValue, zipCode, state, city, district, address, addressNumber, complement)
+    VALUES ('56sdsad65gff', '491.125.615-02', 'venda', 1, 'mega imovel', 4, 3, 2, 1, 3, 4555.55, '31536-045', 'MA', 'Maralandia', 'Mara', 'R. landia', 122, 'azul' );
+  ";
+
+  $insertImmobile2 = "
+    INSERT INTO Immobile (immobileCode, codProp, purpose, availability, description, rooms, suites, livingRooms, diningRooms, parkingSpaces, immobileValue, zipCode, state, city, district, address, addressNumber, complement)
+    VALUES ('sdf45gdf6', '491.125.615-02', 'aluguel', 0, 'mini imovel', 2, 1, 4, 1, 4, 455.55, '31536-045', 'MA', 'Maralandia', 'Mara', 'R. landia', 122, 'azul' );
+  ";
+  
+
   // TABLE ImmobHouse
   $createTableImmobHouse = "
     CREATE TABLE ImmobHouse (
       hasPool integer(1) NOT NULL,
       immobArea float NOT NULL,
-      codImmob integer NOT NULL,
+      codImmob varchar(13) NOT NULL,
       constraint codImmob FOREIGN KEY (codImmob) REFERENCES Immobile (immobileCode),
       PRIMARY KEY (codImmob)
     );    
@@ -134,14 +144,18 @@ try
     DROP TABLE IF EXISTS ImmobHouse;
   ";
 
+  $insertImmobHouse1 = "
+    INSERT INTO ImmobHouse (hasPool, immobArea, codImmob)
+    VALUES (1, 255.5, '56sdsad65gff');
+  ";
+
   // TABLE ImmobApart
   $createTableImmobApart = "
     CREATE TABLE ImmobApart (
-      hasConcierge integer(1) NOT NULL,
       apartmentNumber integer NOT NULL,
       apartmentFloor integer NOT NULL,
       condominiumValue float NOT NULL,
-      codImmob integer NOT NULL,
+      codImmob varchar(13) NOT NULL,
       constraint codImmob FOREIGN KEY (codImmob) REFERENCES Immobile (immobileCode),
       PRIMARY KEY (codImmob)
     );
@@ -149,6 +163,11 @@ try
 
   $dropTableImmobApart = "
     DROP TABLE IF EXISTS ImmobApart;
+  ";
+
+  $insertImmobApart1 = "
+    INSERT INTO ImmobApart (apartmentNumber, apartmentFloor, condominiumValue, codImmob)
+    VALUES (301, 20, 150.52, 'sdf45gdf6');
   ";
 
   // DROP ALL TABLES
@@ -182,6 +201,22 @@ try
   if (!$conn->query($insertPropCustomers1)) {
 
     throw new Exception("Falha no INSERT da tabela PROPCUSTOMERS: " . $conn->error);
+  }
+
+  if (!$conn->query($insertImmobile1) ||
+      !$conn->query($insertImmobile2)) {
+
+    throw new Exception("Falha no INSERT da tabela IMMOBILE: " . $conn->error);
+  }
+
+  if (!$conn->query($insertImmobHouse1)) {
+
+    throw new Exception("Falha no INSERT da tabela IMMOBHOUSE: " . $conn->error);
+  }
+
+  if (!$conn->query($insertImmobApart1)) {
+
+    throw new Exception("Falha no INSERT da tabela IMMOBapart: " . $conn->error);
   }
 
   $conn->close();

@@ -1,6 +1,53 @@
 <!-- TAB - INITIAL INFORMATIONS -->
 <fieldset>
     <div class="form-row">
+        <!-- COD CLIENT -->
+        <div class="form-group col-12">
+            <label for="codProp">CPF do Proprietário:</label>
+            <select class="custom-select form-control" name="codProp" require>
+                <?php
+                    require_once "utility/conexaoMysql.php";
+
+                    $arrayCPF = null;
+            
+                    try {
+                        // Função definida no arquivo conexaoMysql.php
+                        $conn = conectaAoMySQL();
+
+                        $SQL = "
+                            SELECT cpf
+                            FROM PropCustomers
+                        ";
+
+                        $result = $conn->query($SQL);
+                        if (! $result)
+                            throw new Exception('Ocorreu uma falha na listagem: ' . $conn->error);
+                        
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                $arrayCPF[] = $row["cpf"];
+                            }
+                        }
+                        $conn->close();
+                    }
+                    catch (Exception $e) {
+                        $msgErro = $e->getMessage();
+                        $conn->close();
+                    }
+
+                    if ($arrayCPF != null) {
+                        foreach ($arrayCPF as $iscpf) {
+                            echo "
+                                <option value='$iscpf'>$iscpf</option>
+                            ";
+                        }
+                    }
+                ?>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-row">
         <!-- TYPE -->
         <div class="form-group col-md-4">
             <label for="type">Tipo do Imóvel:</label>
