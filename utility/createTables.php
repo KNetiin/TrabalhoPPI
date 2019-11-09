@@ -170,11 +170,26 @@ try
     VALUES (301, 20, 150.52, 'sdf45gdf6');
   ";
 
+  $createTableImagesProperties = "
+    CREATE TABLE ImagesProperties (
+      codImmob varchar(13) NOT NULL,
+        constraint codImmob FOREIGN KEY (codImmob) REFERENCES Immobile (immobileCode),
+        imageName varchar(20) NOT NULL,
+        rowId integer NOT NULL AUTO_INCREMENT,
+        PRIMARY KEY (rowId)
+    );
+  ";
+
+  $dropTableImagesProperties = "
+    DROP TABLE IF EXISTS ImagesProperties;
+  ";
+
   // DROP ALL TABLES
   if (!$conn->query($dropTableEmployees) ||
       !$conn->query($dropTablePropCustomers) ||
       !$conn->query($dropTableInterest) ||
       !$conn->query($dropTableImmobile) ||
+      !$conn->query($dropTableImagesProperties) ||
       !$conn->query($dropTableImmobHouse) ||
       !$conn->query($dropTableImmobApart)) {
 
@@ -186,6 +201,7 @@ try
       !$conn->query($createTablePropCustomers) ||
       !$conn->query($createTableInterest) ||
       !$conn->query($createTableImmobile) ||
+      !$conn->query($createTableImagesProperties) ||
       !$conn->query($createTableImmobHouse) ||
       !$conn->query($createTableImmobApart)) {
 

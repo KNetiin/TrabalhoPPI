@@ -1,9 +1,18 @@
 <?php
 
+// Base de dados do Fuguete
+
 define("HOST", "fdb22.awardspace.net");
 define("USER", "3159096_mysql");
 define("PASSWORD", "ppi12345678");
 define("DATABASE", "3159096_mysql");
+
+// Base de dados do Farofa
+
+// define("HOST", "fdb22.awardspace.net");
+// define("USER", "3162481_teste");
+// define("PASSWORD", "ppi12345678");
+// define("DATABASE", "3162481_teste");
 
 function conectaAoMySQL()
 {
@@ -13,5 +22,3 @@ function conectaAoMySQL()
 
     return $conn;
 }
-
-?>
