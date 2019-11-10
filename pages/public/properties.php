@@ -1,5 +1,5 @@
 <div class="container-fluid" id="filterOptions">
-    <form action="">
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
         <div class="row">
             <div class="col-md-2">
                 <div class="row justify-content-center">
@@ -53,11 +53,27 @@
             <div class="col-md-2">
                 <div class="row">&nbsp</div>
                 <div class="row justify-content-center">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Consultar</button>
+                    <button class="btn btn-outline-success my-2 my-sm-0" onclick="buscaImoveis()" type="submit">Consultar</button>
                 </div>
             </div>
         </div>
     </form>
 </div>
+
+<script>
+
+</script>
+
+<?php
+    if ($_SERVER["REQUEST_METHOD"] === "GET") {
+        // Aqui devemos listar todos os imóveis
+        $query = "
+        SELECT * FROM Immobile;"
+        ;
+    }
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        // Aqui devemos listar os imóveis de acordo com os filtros    
+    }
+?>
 
 <?php include  __DIR__ . "/../../components/presentationCard.php"; ?>

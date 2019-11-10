@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $immobileCode = uniqid(); // Gerando o id da imagem
     // IMAGES INFORMATIONS
-    $uploadDiretory = '../images/properties';
+    $uploadDiretory = 'images/';
 
     $sizeImg1 = $_FILES['images1']['size'];
     $sizeImg2 = $_FILES['images2']['size'];
@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     {
         $arrName = explode(".", $imagem);
         $extension = $arrName[count($arrName) - 1];
-        $newName = $idImmob . $numImage . $extension;
+        $newName = $idImmob . $numImage .".".$extension;
         return $newName;
     };
 
