@@ -4,7 +4,7 @@
         <!-- CEP -->
         <div class="form-group col-md-6">
             <label for="cep">CEP</label>
-            <input type="text" class="form-control" name="cep" placeholder="XXXXX-XXX" required>
+            <input type="text" class="form-control" name="cep" placeholder="XXXXX-XXX" required onkeyup="buscaEndereco(this.value)">
         </div>
     </div>
 
@@ -48,3 +48,5 @@
         </div>
     </div>
 </fieldset>
+
+<script src="../script/main.js"></script>
