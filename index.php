@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -37,9 +39,15 @@
                 <div class="myPage" id="page-public-properties"> <?php include __DIR__ . "/pages/public/properties.php"; ?> </div>
 
                 <!-- PRIVATE -->
-                <div class="myPage" id="page-private-employeesList"> <?php include __DIR__ . "/pages/private/employees/employeesList.php"; ?> </div>
-                <div class="myPage" id="page-private-clientsList"> <?php include __DIR__ . "/pages/private/clients/clientsList.php"; ?> </div>
-                <div class="myPage" id="page-private-propertiesList"> <?php include __DIR__ . "/pages/private/properties/propertiesList.php"; ?> </div>
+                <?php
+                    require_once "utility/autenticacao.php";
+
+                    if(checkUsuarioLogado()) {
+                        require_once __DIR__ . "/pages/private/employees/employeesList.php";
+                        require_once __DIR__ . "/pages/private/clients/clientsList.php";
+                        require_once __DIR__ . "/pages/private/properties/propertiesList.php";
+                    }
+                ?>
             </div>
 
             <div id="footer">

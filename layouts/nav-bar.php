@@ -16,23 +16,46 @@
                     <li class="nav-item">
                         <p class="nav-link" id="navbar-public-properties">Imóveis</p>
                     </li>
+
                     <!-- PRIVATE -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Área Privada
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <p class="dropdown-item" id="navbar-private-employees">Funcionários</p>
-                            <p class="dropdown-item" id="navbar-private-clients">Clientes</p>
-                            <p class="dropdown-item" id="navbar-private-properties">Imóveis</p>
-                        </div>
-                    </li>
+                    <?php
+                        require_once "utility/autenticacao.php";
+
+                        if (checkUsuarioLogado()) {
+                            echo "
+                                <li class='nav-item dropdown'>
+                                    <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                                        Área Privada
+                                    </a>
+                                    <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
+                                        <p class='dropdown-item' id='navbar-private-employees'>Funcionários</p>
+                                        <p class='dropdown-item' id='navbar-private-clients'>Clientes</p>
+                                        <p class='dropdown-item' id='navbar-private-properties'>Imóveis</p>
+                                    </div>
+                                </li>
+                            ";
+                        }
+                    ?>
                 </ul>
             </div>
         </div>
-        <button class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#modalExemplo" type="button">
-            Login
-        </button>
+        <?php
+            require_once "utility/autenticacao.php";
+
+            if (!checkUsuarioLogado()) {
+                echo "
+                    <button class='btn btn-outline-success my-2 my-sm-0' data-toggle='modal' data-target='#modalExemplo' type='button'>
+                        Login
+                    </button>
+                ";
+                } else {
+                    echo "
+                    <button class='btn btn-outline-danger my-2 my-sm-0' type='button'>
+                        Logout
+                    </button>
+                ";
+                }
+        ?>
 
         <!-- Modal -->
         <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -44,15 +67,15 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="" class="formLogin">
+                    <form action="http://fuguete-e-farofa.atwebpages.com/utility/autenticacao.php" class="formLogin" method="POST">
                         <div class="modal-body">
                             <div class="form-group row">
                                 <label for="username">Nome de usuário</label>
-                                <input type="email" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Usuário">
+                                <input class="form-control" name="username" aria-describedby="emailHelp" placeholder="Usuário">
                             </div>
                             <div class="form-group row">
                                 <label for="password">Senha</label>
-                                <input type="password" class="form-control" id="password" placeholder="Senha">
+                                <input type="password" class="form-control" name="password" placeholder="Senha">
                             </div>
                         </div>
                         <div class="modal-footer">
