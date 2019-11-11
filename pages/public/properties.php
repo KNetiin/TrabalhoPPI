@@ -22,8 +22,25 @@
                 <div class="row">
                     <div class="col">
                         <select class="custom-select mr-sm-2" name="district" id="inlineFormCustomSelect">
-                            <option value="Morumbi" >Morumbi</option>
-                            <option value="Martins" selected>Martins</option>
+                            <?php
+                                require_once "utility/conexaoMysql.php";
+                                echo "<option value='all' selected>Todos</option>";
+                                try {
+                                    $conn = conectaAoMySQL();
+                                    $query = "SELECT DISTINCT district from Immobile";
+                                    $arrDistrict = null;
+                                    $result = $conn->query($query);
+                                    if ($result->num_row >= 0) {
+                                        while ($row = $result->fetch_assoc()) {
+                                            $arrDistrict[] = $row['district'];
+                                        }
+                                    }
+                                    foreach($arrDistrict as $district)
+                                        echo "<option value='$district' >$district</option>";
+                                } catch (Exception $e) {
+                                    $msgErro = $e->getMessage();
+                                }
+                            ?>
                         </select>
                     </div>
                 </div>

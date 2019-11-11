@@ -180,6 +180,13 @@ try
     );
   ";
 
+    $insertImageImmobiles1 = "INSERT INTO ImagesProperties (codImmob, imageName) values ('sdf45gdf6','sdf45gdf61.jpg');";
+    $insertImageImmobiles2 = "INSERT INTO ImagesProperties (codImmob, imageName) values ('sdf45gdf6','sdf45gdf62.jpg');";
+    $insertImageImmobiles3 = "INSERT INTO ImagesProperties (codImmob, imageName) values ('sdf45gdf6','sdf45gdf63.jpg');";
+    $insertImageImmobiles4 = "INSERT INTO ImagesProperties (codImmob, imageName) values ('56sdsad65gff','56sdsad65gff1.jpg');";
+    $insertImageImmobiles5 = "INSERT INTO ImagesProperties (codImmob, imageName) values ('56sdsad65gff','56sdsad65gff2.jpg');";
+    $insertImageImmobiles6 = "INSERT INTO ImagesProperties (codImmob, imageName) values ('56sdsad65gff','56sdsad65gff3.jpg');";
+
   $dropTableImagesProperties = "
     DROP TABLE IF EXISTS ImagesProperties;
   ";
@@ -289,6 +296,32 @@ try
 
     throw new Exception("Falha no INSERT da tabela IMMOBapart: " . $conn->error);
   }
+
+  if (!$conn->query($insertImageImmobiles1)) {
+
+    throw new Exception("Falha no INSERT da tabela IMAGE: " . $conn->error);
+  }
+  if (!$conn->query($insertImageImmobiles2)) {
+
+    throw new Exception("Falha no INSERT da tabela IMAGE: " . $conn->error);
+  }
+  if (!$conn->query($insertImageImmobiles3)) {
+
+    throw new Exception("Falha no INSERT da tabela IMAGE: " . $conn->error);
+  }
+  if (!$conn->query($insertImageImmobiles4)) {
+
+    throw new Exception("Falha no INSERT da tabela IMAGE: " . $conn->error);
+  }
+  if (!$conn->query($insertImageImmobiles5)) {
+
+    throw new Exception("Falha no INSERT da tabela IMAGE: " . $conn->error);
+  }
+  if (!$conn->query($insertImageImmobiles6)) {
+
+    throw new Exception("Falha no INSERT da tabela IMAGE: " . $conn->error);
+  }
+
 
   if (!$conn->query($insertAddress1) ||
       !$conn->query($insertAddress2) ||
