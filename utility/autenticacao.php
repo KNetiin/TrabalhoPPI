@@ -51,6 +51,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     } else {
         echo "Falha no Login!";
     }
+    echo '<script>window.location.href = "http://fuguete-e-farofa.atwebpages.com";</script>';
+    exit();
 }
 
 ?>

@@ -49,11 +49,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         throw new Exception("Falha na operacao execute: " . $stmt->error);
 
     $conn->close();
+    echo '<script>window.location.href = "http://fuguete-e-farofa.atwebpages.com";</script>';
   }
   catch (Exception $e) {
     $msgErro = $e->getMessage();
     echo $msgErro;
     $conn->close();
+    echo '<script>window.location.href = "http://fuguete-e-farofa.atwebpages.com";</script>';
   }
 }
 

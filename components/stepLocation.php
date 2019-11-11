@@ -49,4 +49,46 @@
     </div>
 </fieldset>
 
-<script src="../script/main.js"></script>
+<script>
+
+function buscaEndereco(zipCode) {
+    if (zipCode.length != 9)
+        return;
+
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onload = function (e)
+    {
+        if (xmlhttp.status == 200)
+        {
+            if (xmlhttp.responseText != "")
+            {
+                try
+                {
+                    address = JSON.parse(xmlhttp.responseText);
+                    document.forms[6]["state"].value = address.state;
+                    document.forms[6]["city"].value = address.city;
+                    document.forms[6]["district"].value = address.district;
+                    document.forms[6]["address"].value = address.address;
+                    document.forms[7]["state"].value = address.state;
+                    document.forms[7]["city"].value = address.city;
+                    document.forms[7]["district"].value = address.district;
+                    document.forms[7]["address"].value = address.address;
+                    document.forms[8]["state"].value = address.state;
+                    document.forms[8]["city"].value = address.city;
+                    document.forms[8]["district"].value = address.district;
+                    document.forms[8]["address"].value = address.address;
+                }
+                catch (e)
+                {
+                    alert("A string retornada pelo servidor não é um JSON válido: " + xmlhttp.responseText);
+                }
+            }
+            else
+                alert("CEP não encontrado");
+        }
+    }
+
+    xmlhttp.open("GET", "http://fuguete-e-farofa.atwebpages.com/utility/buscaEndereco.php?zipCode=" + zipCode, true);
+    xmlhttp.send();
+    }
+</script>

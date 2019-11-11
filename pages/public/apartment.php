@@ -215,11 +215,11 @@
                                                                 <div class='col'>
                                                                     <ul class='list-group'>";
                                                                     
-                                                                    foreach ($arrImages as $image) {
+                                                                    foreach ($arrImages as $batata) {
                                                                         echo " <li class='list-group-item myListImages'>
-                                                                            <img src='pages/private/properties/images/$image' class='imgProp' alt='img1'>
+                                                                            <img src='pages/private/properties/images/$batata' class='imgProp' alt='img1'>
                                                                          </li>";
-                                                                    } 
+                                                                    };
                                                                         echo "
                                                                     </ul>
                                                                 </div>

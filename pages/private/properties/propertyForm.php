@@ -49,7 +49,7 @@
 
         <!-- FORM -->
         <div class="card-body">
-            <form action="http://knetiin.atwebpages.com/pages/private/properties/propertiesPost.php" enctype="multipart/form-data" method="POST">
+            <form action="http://fuguete-e-farofa.atwebpages.com/pages/private/properties/propertiesPost.php" enctype="multipart/form-data" method="POST">
 
                 <div id="initial-property-form">
                     <?php include "components/stepInitial.php"; ?>
